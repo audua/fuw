@@ -114,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 CSRF_TRUSTED_ORIGINS = [
-    'fuw-auduab.b4a.run'
+    'https://fuw-auduab.b4a.run'
 ]
 
 LANGUAGE_CODE = 'en-us'
