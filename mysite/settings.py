@@ -27,9 +27,10 @@ SECRET_KEY = 'django-insecure-2qte0_v)#xkov3p5*w+f*7ys1p0ze*qjqf=)6!i6qq7x%rqnnv
 DEBUG = True
 
 ALLOWED_HOSTS = [
-  'localhost',
-  '127.0.0.1',
-  'fuw-auduab.b4a.run'
+    'localhost',
+    '127.0.0.1',
+    'https://fuw-auduab.b4a.run',
+    'fuw-auduab.b4a.run',
 ]
 
 
