@@ -1,0 +1,48 @@
+{% extends "fuw/base.html" %}
+
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-header"><a class="text-decoration-none text-dark" href="{% url 'index' %}">Home</a></h5>
+            <form method="POST">
+                {% csrf_token %}
+
+                {% for message in messages %}
+                    <div {% if message.extra_tags %} class="alert alert-{{message.extra_tags}}" {% endif %}>
+                        <strong>{{ message }}</strong>
+                    </div>
+                {% endfor %}
+
+                {% if form.errors %}
+                {% for field in form %}
+                    {% for error in field.errors %}
+                        <div class="alert alert-danger">
+                            <strong>{{ error }}</strong>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+                {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error }}</strong>
+                    </div>
+                {% endfor %}
+                {% endif %}
+
+                {{ form.non_form_errors }}
+
+                <p class="card-text">
+                    <div class="form-group col-md-6 mt-5">
+                    {{ form|crispy }}
+                    <button class="btn btn-dark" type="submit">Submit</button>
+                    </div>
+                </p>
+
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+
