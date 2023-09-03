@@ -30,7 +30,6 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     'https://fuw-auduab.b4a.run',
-    'fuw-auduab.b4a.run',
 ]
 
 
@@ -60,6 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://fuw-auduab.b4a.run']
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
@@ -113,10 +113,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
-
-CSRF_TRUSTED_ORIGINS = [
-    'https://fuw-auduab.b4a.run'
-]
 
 LANGUAGE_CODE = 'en-us'
 
