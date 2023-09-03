@@ -59,7 +59,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 CSRF_TRUSTED_ORIGINS = ['https://fuw-auduab.b4a.run']
+
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
