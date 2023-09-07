@@ -10,14 +10,23 @@
                     <strong>{{ message }}</strong>
                 </div>
             {% endfor %}
-
+            {% for student in students %}
+            {% if forloop.first %}
             <div class=" h6 card-title mb-5 mt-3">
                 {{student.matric_number}} scores are:
             </div>
+            {% endif %}
 
             <p class="card-text">
                 {{student.classname.name}}({{student.classname.code}}):<span class="fw-bold"> {{student.classname.evaluation.score}}</span>
             </p>
+            {% empty %}
+                <div class="h6 card-title mb-5 mt-3 text-danger">
+                    There are no scores for {{matric_number}}, check the matric number you entered
+                </div>
+
+            {% endfor %}
+
         </div>
     </div>
 
